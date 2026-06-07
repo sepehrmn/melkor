@@ -1,0 +1,65 @@
+# macOS
+.DS_Store
+.DS_store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# SwiftPM / Xcode
+.build/
+.swiftpm/
+.swiftpm-cache/
+.swiftpm-scratch/
+.clang-module-cache/
+DerivedData/
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.python-version
+
+# Logs
+*.log
+
+# Scratch / temp
+.tmp*/
+
+# Local artifacts / datasets
+output/
+output_*/
+sampled_*/
+sample_images/
+edth_images/
+test_images_realworld/
+test_images_50/
+
+# ML / checkpoints (do not commit large artifacts)
+*.safetensors
+*.pth
+*.pt
+*.ckpt
+*.npz
+
+# 3D / point cloud artifacts
+*.ply
+
+# CoreML artifacts (regenerate via Scripts/)
+*.mlmodel
+*.mlpackage/
+*.mlmodelc/
+Models/checkpoints/
+Models/compiled*/
+Models/converted/

@@ -202,7 +202,7 @@ MLP-based pose optimization. Highest quality but slower.
 | Some reconstruction warnings | `direct` |
 | Poor COLMAP quality | `mlp` |
 | Moving/handheld camera | `mlp` |
-| Drone/aerial footage | `direct` or `mlp` |
+| Aerial footage | `direct` or `mlp` |
 | Studio with calibrated camera | `none` |
 
 ## Common Workflows
