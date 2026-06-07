@@ -1,0 +1,92 @@
+# Build artifacts
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.o
+*.a
+*.dylib
+*.so
+*.air
+*.metallib
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Large directories installed by setup scripts
+tools/libtorch/
+tools/OpenSplat/
+tools/gsplat-mps/
+third_party/spz/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.egg-info/
+*.pyc
+
+# Feedforward model weights
+~/.melkor/
+
+# 3D data formats (large binary files)
+*.glb
+*.gltf
+*.ply
+*.spz
+*.splat
+*.bin
+
+# Compressed files
+*.zip
+*.tar.gz
+*.tgz
+
+# Image outputs
+output/
+results/
+*.ppm
+
+# COLMAP outputs
+sparse/
+dense/
+database.db
+
+# Temporary files
+/tmp/
+*.tmp
+*.temp
+*.log
+*.safetensors
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.mlmodel
+*.mlpackage
+*.gguf
+
+# AI tool configs
+.claude/
+.aider*
+.factory/
+
+# DA3coreml working artifacts
+DA3coreml/coreml/output*
+DA3coreml/coreml/tmp_*
+DA3coreml/coreml/sampled_*
+DA3coreml/coreml/Models/
+
+# ml-sharp data outputs
+ml-sharp/data/

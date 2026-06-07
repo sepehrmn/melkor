@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-macos:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          brew install cmake
+          ./scripts/setup_deps.sh
+      - name: Build
+        run: |
+          mkdir -p build && cd build
+          cmake .. && make -j$(sysctl -n hw.ncpu)
+      - name: Test
+        run: ./build/melkor --info
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y cmake build-essential
+          ./scripts/setup_deps.sh
+      - name: Build
+        run: |
+          mkdir -p build && cd build
+          cmake .. && make -j$(nproc)
+      - name: Test
+        run: ./build/melkor --info
+
+  lint-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Lint
+        run: |
+          pip install ruff
+          ruff check tools/da3/ DA3coreml/src/ --no-unsafe-fixes
